@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import PrivateRoutes from "./privateRoutes";
 import PublicRoutes from "./publicRoutes";
+import NotFound from "../features/client/pages/notFound";
 
 
 const MainRoutes = () => {
@@ -11,7 +12,7 @@ const MainRoutes = () => {
             {/* <Route index element={<Home />} /> */}
             <Route path='/auth/*' element={<PublicRoutes />} />
             <Route path="/profile/*" element={<PrivateRoutes />} />
-            {/* <Route path="*" element={<NotFound />} /> */}
+            <Route path="*" element={<NotFound />} />
         </Routes>
     );
 };
