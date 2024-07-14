@@ -4,8 +4,8 @@ import Navbar from "./component/navbar"
 
 const ClientLayout = () => {
     return (
-        <div>
-            <div>
+        <div >
+            <div >
                 <Navbar />
             </div>
             <div>

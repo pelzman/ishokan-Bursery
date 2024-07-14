@@ -38,7 +38,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         return (
             <div className='relative flex flex-col text-gray-600 ' >
                 <label
-                    className='text-[12px] font-normal mb-[10px] '
+                    className='text-[12px] font-normal my-[10px] '
                     htmlFor={props.id || name || label}
                 >
                     {label}

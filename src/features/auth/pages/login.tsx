@@ -84,7 +84,7 @@ const Login = () => {
                 </Link>
 
 
-                <span className='mt-10 flex justify-center items-center gap-[5px]'>don't have an account: <Link to={'/auth/'} className='text-blue-500 text-[14px]'>Register here</Link></span>
+                <span className='mt-10 flex justify-center items-center gap-[5px]'>don't have an account: <Link to={'/auth/register'} className='text-blue-500 text-[14px]'>Register here</Link></span>
             </div>
 
 

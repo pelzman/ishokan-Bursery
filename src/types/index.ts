@@ -19,6 +19,7 @@ export interface IReset {
   confirm_password: string;
 }
 export interface ILoginResponse {
+  refreshToken: any;
   accessToken: string;
   //refreshToken
 }

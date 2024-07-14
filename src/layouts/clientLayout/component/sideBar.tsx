@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 
-const SideBar = ({ handleClose }:{handleClose:()=>void}) => {
+const SideBar = ({ handleClose }: { handleClose: () => void }) => {
+
+
     return (
         <div className='fixed inset-0 bg-gray-800 bg-opacity-90 flex flex-col items-center justify-center text-white'>
             <button
@@ -10,10 +12,10 @@ const SideBar = ({ handleClose }:{handleClose:()=>void}) => {
                 &times;
             </button>
             <ul className='flex flex-col gap-y-6 text-center'>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Bursery</li>
-                <li>Contact Us</li>
+                <Link onClick={handleClose} to='/profile/client'>Home</Link>
+                <Link onClick={handleClose} to='/profile/client/bursary'>Bursary</Link>
+                <Link onClick={handleClose} to='/profile/client/about'>About Us</Link>
+                <Link onClick={handleClose} to='/profile/client/contact'>Contact Us</Link>
             </ul>
         </div>
     );

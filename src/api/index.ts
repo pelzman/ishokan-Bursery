@@ -8,7 +8,7 @@ const api = axios.create({
 });
 
 // Function to get tokens from local storage (or any other storage mechanism)
-const getTokens = () => {
+ export const getTokens = () => {
   return {
     accessToken: localStorage.getItem('accessToken'),
     refreshToken: localStorage.getItem('refreshToken'),
@@ -16,19 +16,18 @@ const getTokens = () => {
 };
 
 // Function to store tokens in local storage
-const storeTokens = (accessToken: string, refreshToken: string) => {
+ export const storeTokens = (accessToken: string, refreshToken: string) => {
   localStorage.setItem('accessToken', accessToken);
   localStorage.setItem('refreshToken', refreshToken);
-};
-
+}
 // Function to remove tokens from local storage
-const clearTokens = () => {
+export const clearTokens = () => {
   localStorage.removeItem('accessToken');
   localStorage.removeItem('refreshToken');
 };
 
 // Function to refresh tokens
-const refreshTokens = async () => {
+export const refreshTokens = async () => {
   const { refreshToken } = getTokens();
   if (!refreshToken) throw new Error('No refresh token available');
 

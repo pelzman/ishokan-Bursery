@@ -21,13 +21,13 @@ const Navbar = () => {
             <div className='w-[100%] flex justify-end lg:justify-end items-center'>
                 <ul className=' hidden lg:flex lg:justify-end lg:items-center lg:gap-x-[30px] cursor-pointer'>
 
-                    <Link to='/profile/client/about'>Home</Link>
+                    <Link to='/profile/client/'>Home</Link>
                     <Link to='/profile/client/bursary'>Bursary</Link>
                     <Link to='/profile/client/about'>About Us</Link>
                     <Link to='/profile/client/contact'>Contact Us</Link>
                 </ul>
-                
-                <div onClick={handleToggle} className=" md:hidden flex justify-center flex-col gap-y-[5px] py-[10px] items-center align-middle bg-[#989898] rounded-sm cursor-pointer relative w-[30px] h-[30px]">
+
+                <div onClick={handleToggle} className=" lg:hidden flex justify-center flex-col gap-y-[5px] py-[10px] items-center align-middle bg-[#989898] rounded-sm cursor-pointer relative w-[30px] h-[30px] ">
                     <div
                         className={`w-[15px] h-[2px] bg-[#fff] transition-transform duration-300 absolute ${toggle ? 'rotate-45 translate-y-[5px]' : 'translate-y-[-5px]'}`}
                     ></div>

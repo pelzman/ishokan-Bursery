@@ -17,6 +17,7 @@ const Register = () => {
         gender: '',
         email: '',
         password: '',
+        dob: ''
     }
 
 
@@ -27,7 +28,7 @@ const Register = () => {
 
     const handleSubmit = (values) => {
         console.log(values)
-        // navigate('/auth/login')
+        navigate('/auth/login')
     }
 
     return (
@@ -149,7 +150,7 @@ const Register = () => {
                                     name="dob"
                                     className='lg:w-[100%]'
 
-                                    value={formikProps.values.phone_number}
+                                    value={formikProps.values.dob}
                                     onChange={formikProps.handleChange}
                                     onBlur={formikProps.handleBlur}
 
