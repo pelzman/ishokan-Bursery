@@ -1,27 +1,52 @@
 import Card from "../../../../../globals/Card"
 import { TestimonialData } from "../data"
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { Testysettings } from "../../../../../utils";
 
 const Testimonial = () => {
     return (
-        <div className="pt-[40px] ">
+        <div className="pt-[40px] w-full mb-[50px]">
             <h2 className="text-center text-2xl font-bold mb-2" >Testimonial</h2>
-            <div className=" w-[100%] h-auto mx-auto  mb-[20px]  pt-[5px] md:flex md:justify-around md:items-center md:gap-x-[30px] gap-y-[20px]">
 
-                {TestimonialData.map((item, index) => {
-                    return (<Card key={index} className="py-[40px] lg:py-[40px] ">
-                        <div className="lg:flex lg:flex-col lg:justify-center lg:items-center text-center">
-                            <p>{item.count}</p> <br />
-                            <p>{item.text}</p>
+
+
+            <div className="w-full">
+                <Slider {...Testysettings}>
+                    {TestimonialData.map((testimonial, index) => (
+                        <div key={index} className="px-4  py-[20px]">
+                            <div className="bg-white  rounded-lg p-6 h-full flex flex-col justify-between">
+                                <p className="text-gray-700 text-base mb-4">“{testimonial.text}”</p>
+                                <p className="text-gray-900 font-bold text-right">- {testimonial.name}</p>
+                            </div>
                         </div>
-
-
-                    </Card>)
-                })}
-
-
-
-
+                    ))}
+                </Slider>
             </div>
+
+            {/* <div className="w-full p-4">
+                <Slider {...Testysettings}>
+
+                    <div className=" w-[1000px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+                        {TestimonialData.map((testimonial, index) => (
+                            <div key={index} className="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col justify-between">
+                                <p className="text-gray-700 text-base mb-4">“{testimonial.text}”</p>
+                                <p className="text-gray-900 font-bold text-right">- {testimonial.name}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div>
+
+                    </div>
+                </Slider>
+            </div> */}
+
+
+
+
+
         </div>
 
     )

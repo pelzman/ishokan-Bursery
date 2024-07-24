@@ -47,6 +47,37 @@ export const settings = {
     },
   ],
 };
+export const Testysettings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 10000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 10000,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+      },
+    },
+  ],
+};
 
 
 const ReusableCountUp = ({ start = 0, end, duration = 2.5 }: any) => {
