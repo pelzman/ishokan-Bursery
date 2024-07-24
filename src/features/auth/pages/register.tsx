@@ -9,6 +9,7 @@ import { useState } from 'react'
 import TextError from '../../../globals/TextError'
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { useUsers } from '../../../hooks/useUser'
 const Register = () => {
     const initialValues: IRegister = {
         firstname: '',
@@ -17,17 +18,28 @@ const Register = () => {
         gender: '',
         email: '',
         password: '',
+        dob: ''
     }
 
 
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false)
 
+    const {addUser, error} = useUsers()    
 
+    const handleSubmit = async(values:any) => {
+        try {
+         const res = await addUser(values)
+            if(res){
+                return navigate('/auth/login')
+            }
 
-    const handleSubmit = (values) => {
-        console.log(values)
-        // navigate('/auth/login')
+            return error
+         
+        } catch (error:any) {
+         return error.message   
+        }
+    
     }
 
     return (
@@ -55,7 +67,6 @@ const Register = () => {
                                     value={formikProps.values.firstname}
                                     onChange={formikProps.handleChange}
                                     onBlur={formikProps.handleBlur}
-
                                 />
                                 <ErrorMessage name="firstname" component={TextError} />
                             </div>
@@ -149,7 +160,7 @@ const Register = () => {
                                     name="dob"
                                     className='lg:w-[100%]'
 
-                                    value={formikProps.values.phone_number}
+                                    value={formikProps.values.dob}
                                     onChange={formikProps.handleChange}
                                     onBlur={formikProps.handleBlur}
 

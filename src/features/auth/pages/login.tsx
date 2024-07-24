@@ -10,6 +10,7 @@ import { ILogin } from '../../../types'
 import TextError from '../../../globals/TextError'
 import { useState } from 'react'
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa'
+import { useUsers } from '../../../hooks/useUser'
 
 const Login = () => {
     const initialValues: ILogin = {
@@ -17,16 +18,15 @@ const Login = () => {
         password: ''
     }
     const [showPassword, setShowPassword] = useState(false)
-
+          const{loginUser} = useUsers()
     const navigate = useNavigate()
 
-    const handleSubmit = () => {
-
+    const handleSubmit = async (values:any) => {
+          await loginUser(values)
         navigate('/profile/client')
     }
     return (
         <div className=' lg:w-[100%] lg:h-screen pt-[50px] lg:pt-0  lg:flex lg:justify-start gap-x-[100px] '>
-
             <div className='hidden lg:flex  lg:w-[55%] blur-[2px]'>
                 <img src={image} alt="" />
             </div>
@@ -84,7 +84,7 @@ const Login = () => {
                 </Link>
 
 
-                <span className='mt-10 flex justify-center items-center gap-[5px]'>don't have an account: <Link to={'/auth/'} className='text-blue-500 text-[14px]'>Register here</Link></span>
+                <span className='mt-10 flex justify-center items-center gap-[5px]'>don't have an account: <Link to={'/auth/register'} className='text-blue-500 text-[14px]'>Register here</Link></span>
             </div>
 
 
