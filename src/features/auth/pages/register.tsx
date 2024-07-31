@@ -25,21 +25,21 @@ const Register = () => {
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false)
 
-    const {addUser, error} = useUsers()    
+    const { addUser, error } = useUsers()
 
-    const handleSubmit = async(values:any) => {
+    const handleSubmit = async (values: any) => {
         try {
-         const res = await addUser(values)
-            if(res){
+            const res = await addUser(values)
+            if (res) {
                 return navigate('/auth/login')
             }
 
             return error
-         
-        } catch (error:any) {
-         return error.message   
+
+        } catch (error: any) {
+            return error.message
         }
-    
+
     }
 
     return (
@@ -48,14 +48,14 @@ const Register = () => {
             <div className='hidden lg:flex  lg:w-[55%] blur-[2px]'>
                 <img src={image} alt="" />
             </div>
-            <div className=' mt-[-20px] px-[20px] lg:pt-[30px] lg-w-1/3'>
+            <div className=' mt-[-20px] px-[20px] lg:pt-[20px] lg-w-1/3'>
                 <Formik
                     initialValues={initialValues}
                     onSubmit={handleSubmit}
                     validationSchema={userRegisterSchema}
                 >
                     {(formikProps) => (
-                        <Form className=" space-y-[10px]  lg:space-y-[20px] lg:px-[20px] lg:w-[500px]  w-{100%]   ">
+                        <Form className=" space-y-[10px]  lg:space-y-[10px] lg:px-[20px] lg:w-[500px]  w-{100%]   ">
 
                             <div>
                                 <Input
@@ -115,14 +115,14 @@ const Register = () => {
                                     className='lg:w-[100%]'
 
                                 />
-                                <p onClick={() => setShowPassword(!showPassword)} className='absolute right-[20px] top-[40px] cursor-pointer'>{!showPassword ? <FaRegEye /> : <FaRegEyeSlash />}</p>
+                                <p onClick={() => setShowPassword(!showPassword)} className='absolute right-[20px] top-[50px] cursor-pointer'>{!showPassword ? <FaRegEye /> : <FaRegEyeSlash />}</p>
                                 <ErrorMessage name="password" component={TextError} />
                             </div>
 
                             <div>
                                 <Input
-                                    label='Phone Number'
-                                    type="number"
+                                    label='Phone Number'ß
+                                    type="text"
                                     isRequired
                                     name="phone_number"
                                     className='lg:w-[100%]'

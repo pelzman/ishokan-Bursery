@@ -33,15 +33,15 @@ export const data = [
 export const BoardData = [
 
 
-  { name: 'Adefoluke Adeyemo', position: 'Position 1', imageUrl: '../../../../../public/assets/images/Adefoluke Adeyemo.jpg' },
-  { name: 'Adesola Afun-Ogidan', position: 'Position 2', imageUrl: '../../../../../public/assets/images/Adesola Afun-Ogidan.jpg' },
-  { name: 'Adesola Hannah Ajakaiye', position: 'Position 3', imageUrl: '../../../../../public/assets/images/Hannah Ajakaiye.jpg' },
-  { name: 'Idris Balogun', position: 'Position 4', imageUrl: '../../../../../public/assets/images/Idris Balogun.jpg' },
-  { name: 'Olawale Alo', position: 'Position 5', imageUrl: '../../../../../public/assets/images/Olawale Alo.jpg' },
-  { name: 'Olayiwola Ajilore', position: 'Position 6', imageUrl: '../../../../../public/assets/images/Olayiwola Ajilore.jpg' },
-  { name: 'TOlufunke Okejimi', position: 'Position 7', imageUrl: '../../../../../public/assets/images/Olufunke Okejimi.jpg' },
-  { name: 'Temitayo Odeyemi', position: 'Position 8', imageUrl: '../../../../../public/assets/images/Temitayo Odeyemi.jpg' },
-  { name: 'Victor Ogunleye', position: 'Position 9', imageUrl: '../../../../../public/assets/images/Victor Ogunleye.jpg' },
+  { name: 'Adefoluke Adeyemo', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Adefoluke Adeyemo.jpg' },
+  { name: 'Adesola Afun-Ogidan', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Adesola Afun-Ogidan.jpg' },
+  { name: 'Adesola Hannah Ajakaiye', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Hannah Ajakaiye.jpg' },
+  { name: 'Idris Balogun', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Idris Balogun.jpg' },
+  { name: 'Olawale Alo', position: 'PTrustee', imageUrl: '../../../../../public/assets/images/Olawale Alo.jpg' },
+  { name: 'Olayiwola Ajilore', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Olayiwola Ajilore.jpg' },
+  { name: 'Olufunke Okejimi', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Olufunke Okejimi.jpg' },
+  { name: 'Temitayo Odeyemi', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Temitayo Odeyemi.jpg' },
+  { name: 'Victor Ogunleye', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Victor Ogunleye.jpg' },
 
 
 ];

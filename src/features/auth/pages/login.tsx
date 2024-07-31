@@ -18,11 +18,11 @@ const Login = () => {
         password: ''
     }
     const [showPassword, setShowPassword] = useState(false)
-          const{loginUser} = useUsers()
+    const { loginUser } = useUsers()
     const navigate = useNavigate()
 
-    const handleSubmit = async (values:any) => {
-          await loginUser(values)
+    const handleSubmit = async (values: any) => {
+        await loginUser(values)
         navigate('/profile/client')
     }
     return (
@@ -65,7 +65,7 @@ const Login = () => {
                                 className='lg:w-[100%]'
 
                             />
-                            <p onClick={() => setShowPassword(!showPassword)} className='absolute right-[20px] top-[40px] cursor-pointer'>{!showPassword ? <FaRegEye /> : <FaRegEyeSlash />}</p>
+                            <p onClick={() => setShowPassword(!showPassword)} className='absolute right-[20px] top-[50px] cursor-pointer'>{!showPassword ? <FaRegEye /> : <FaRegEyeSlash />}</p>
                             <ErrorMessage name="password" component={TextError} />
                         </div>
 

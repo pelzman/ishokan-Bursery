@@ -1,30 +1,36 @@
 import { ErrorMessage, Formik, Form } from "formik"
 import Input from "../../../../../globals/input"
 import TextError from "../../../../../globals/TextError"
-import { Link } from "react-router-dom"
+
 import { userRegisterSchema } from "../../../../../validations"
+import TimePicker from "react-time-picker"
+import { useState } from "react"
 
 const BursaryForm = () => {
-
+    const [value, onChange] = useState('10:00');
     return (
         <div className="overflow-x-hidden-hidden ">
-            <h2 className="px-[20px] pt-[20px]">Kindly fill your Information</h2>
-            <div className='px-[20px] '>
+
+            <div className='px-[20px] border-red-500'>
                 <Formik
                     initialValues={{}}
                     onSubmit={() => { }}
                     validationSchema={userRegisterSchema}
                 >
                     {(formikProps) => (
-                        <Form >
-                            <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-4   ">
+                        <Form className="  lg:mt-[10px] lg:mb-[10px]  lg:flex lg:flex-col   lg:border lg:rounded-lg lg:items-center lg:pt-[20px] lg:pb-[20px]">
+                            <div className="text-start lg:w-[900px]">
+                                <h2 className="pb-[10px] pt-[20px]">Kindly fill your Information</h2>
+                            </div>
+
+                            <div className="md:grid md:grid-cols-2 md:gap-x-[20px] md:border md:px-[10px] md:py-[20px] md:rounded-md md:shadow-md lg:grid-cols-2 lg:w-[900px] lg:border lg:rounded-md lg:shadow-md lg:pr-[80px] lg:pl-[80px] lg:pb-[20px]">
                                 <div>
                                     <Input
                                         label='First Name'
                                         type="text"
                                         isRequired
                                         name="firstname"
-                                        className='lg:w-[300px]'
+                                        className='lg:w-[350px]'
                                         // value={formikProps.values.firstname}
                                         onChange={formikProps.handleChange}
                                         onBlur={formikProps.handleBlur}
@@ -39,7 +45,7 @@ const BursaryForm = () => {
                                         type="text"
                                         isRequired
                                         name="lastname"
-                                        className='lg:w-[300px]'
+                                        className='lg:w-[350px]'
                                         // value={formikProps.values.lastname}
                                         onChange={formikProps.handleChange}
                                         onBlur={formikProps.handleBlur}
@@ -58,7 +64,7 @@ const BursaryForm = () => {
                                         // value={formikProps.values.email}
                                         onChange={formikProps.handleChange}
                                         onBlur={formikProps.handleBlur}
-                                        className='lg:w-[300px]'
+                                        className='lg:w-[350px]'
 
                                     />
                                     <ErrorMessage name="email" component={TextError} />
@@ -73,7 +79,7 @@ const BursaryForm = () => {
                                         // value={formikProps.values.password}
                                         onChange={formikProps.handleChange}
                                         onBlur={formikProps.handleBlur}
-                                        className='lg:w-[300px]'
+                                        className='lg:w-[350px]'
 
                                     />
 
@@ -86,7 +92,7 @@ const BursaryForm = () => {
                                         type="number"
                                         isRequired
                                         name="phone_number"
-                                        className='lg:w-[300px]'
+                                        className='lg:w-[350px]'
 
                                         // value={formikProps.values.phone_number}
                                         onChange={formikProps.handleChange}
@@ -99,7 +105,7 @@ const BursaryForm = () => {
                                     <label htmlFor="gender" className='text-[13px] text-gray-500 '>Gender</label> <span className='text-red-400 text-[15px]'>*</span>
 
                                     <br />
-                                    <select id="gender" className='w-[100%] lg:w-[300px] py-2.5 mt-[7px] px-4  outline-none   rounded-lg bg-white shadow-inner '
+                                    <select id="gender" className='w-[100%] lg:w-[350px] py-2.5 mt-[7px] px-4  outline-none   rounded-lg bg-white shadow-inner '
 
                                         name='gender'
                                         // value={formikProps.values.gender}
@@ -112,6 +118,9 @@ const BursaryForm = () => {
                                     </select>
                                     <ErrorMessage name="gender" component={TextError} />
                                 </div>
+                                <div className="w-[400px] bg-red-500"  >
+                                    <TimePicker onChange={onChange} value={value} />
+                                </div>
 
                                 <div>
                                     <Input
@@ -119,7 +128,7 @@ const BursaryForm = () => {
                                         type="date"
                                         isRequired
                                         name="dob"
-                                        className='lg:w-[300px]'
+                                        className='lg:w-[350px]'
 
                                         // value={formikProps.values.dob}
                                         onChange={formikProps.handleChange}

@@ -2,7 +2,7 @@ import Hero from "./component/Hero"
 
 const AboutUs = () => {
   return (
-    <div>
+    <div className="pt-[30px]">
       <Hero />
     </div>
   )

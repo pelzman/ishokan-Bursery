@@ -8,14 +8,14 @@ import { settings } from "../../../../../utils";
 const BoardOfTrustees = () => {
 
     return (
-        <div className="pt-10">
+        <div className="pt-[40px] " >
             <h2 className="text-center text-2xl font-bold mb-2">Board of Trustees</h2>
             <div className="w-full h-auto mx-auto mb-5 pt-[10px]">
                 <Slider {...settings}>
                     {BoardData.map((item, index) => (
                         <div key={index} className="p-5">
                             <div className="bg-white p-8 rounded shadow-lg  flex flex-col justify-center items-center">
-                                <img src={item.imageUrl} alt="" className="w-[300px] h-[300px] rounded-full object-cover" />
+                                <img src={item.imageUrl} alt="" className="w-[300px] h-[300px] rounded-full object-center" />
                                 <p className="text-lg font-medium">{item.name}</p>
                                 <p className="text-sm mt-2">{item.position}</p>
                             </div>

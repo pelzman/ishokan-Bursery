@@ -1,9 +1,9 @@
-import React from 'react'
+
 
 const Contact = () => {
   return (
-    <div>
-        Hello contact
+    <div className='pt-[60px]'>
+      Hello contact
     </div>
   )
 }

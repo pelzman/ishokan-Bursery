@@ -16,7 +16,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className=' relative  px-[20px] w-[100%] flex items-center  justify-between lg:justify-start lg:items-center h-[60px] bg-white text-blue-500 shadow-lg' >
+        <div className=' fixed z-50 px-[20px] w-[100%] flex items-center  justify-between lg:justify-start lg:items-center h-[60px] bg-white text-blue-500 shadow-lg' >
             <div>Logo</div>
             <div className='w-[100%] flex justify-end lg:justify-end items-center'>
                 <ul className=' hidden lg:flex lg:justify-end lg:items-center lg:gap-x-[30px] cursor-pointer'>

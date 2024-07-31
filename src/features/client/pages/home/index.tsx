@@ -4,7 +4,7 @@ import OurAchievement from "./component/OurAchievement"
 import Testimonial from "./component/Testimonial"
 const Home = () => {
     return (
-        <div className="w-[100%] relative overflow-hidden">
+        <div className="w-[100%] relative overflow-hidden lg:pt-[30px]">
             <section>
                 <Carousel />
             </section>
@@ -13,11 +13,11 @@ const Home = () => {
                 <OurAchievement />
             </section>
 
-            <section>
+            <section className="lg:h-[100%] lg:py-[100px] ">
                 <Testimonial />
             </section>
 
-            <section>
+            <section className="lg:pt-[-30px] lg:h-[100%]">
                 <BoardOfTrustees />
             </section>
 

@@ -7,7 +7,7 @@ import { Testysettings } from "../../../../../utils";
 
 const Testimonial = () => {
     return (
-        <div className="pt-[40px] w-full mb-[50px]">
+        <div className="pt-[40px] w-full ">
             <h2 className="text-center text-2xl font-bold mb-2" >Testimonial</h2>
 
 
