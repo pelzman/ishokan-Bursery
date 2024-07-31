@@ -15,7 +15,7 @@ const BoardOfTrustees = () => {
                     {BoardData.map((item, index) => (
                         <div key={index} className="p-5">
                             <div className="bg-white p-8 rounded shadow-lg  flex flex-col justify-center items-center">
-                                <img src={item.imageUrl} alt="" className="w-[300px] h-[300px] rounded-full object-center" />
+                                <img src={item.imageUrl} alt="" className="w-[300px] h-[300px] rounded-full object-contain" />
                                 <p className="text-lg font-medium">{item.name}</p>
                                 <p className="text-sm mt-2">{item.position}</p>
                             </div>

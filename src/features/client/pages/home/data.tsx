@@ -15,6 +15,27 @@ export const data = [
   },
 ];
 
+export const idileMajemu = [
+  {
+    title: "Who We Are",
+    imageUrl: "../../../../../public/assets/images/whoBG.jpg",
+    //imageUrl: "",
+    text: "Idile Majemu Human Empowerment Foundation, Ile-Ife was birthed in 2019 by five former members of the Cherubim & Seraphim (C&S) Fellowship (popularly known as Covenant Family or Isokan) of Obafemi Awolowo University, Ile-Ife.",
+  },
+  {
+    title: "What We do",
+    imageUrl: "../../../../../public/assets/images/whoBG.jpg",
+    // imageUrl: "",
+    text: "This initiative, which started as a bursary scheme, has evolved into a fully-fledged non-profit organization, officially registered with the Corporate Affairs Commission (CAC). The foundation remains a closed membership group, exclusively open to former members of the C&S Fellowship of Obafemi Awolowo University, Ile-Ife.",
+  },
+  {
+    title: "Our Approach",
+    imageUrl: "../../../../../public/assets/images/whoBG.jpg",
+    // imageUrl: "",
+    text: "Motivated by a passion for promoting academic excellence, they began by sponsoring the tuition and accommodation expenses of undergraduate members within the fellowship who were excelling in their academics, but experiencing financial challenges.",
+  },
+];
+
 // export const TestimonialData = [
 //   {
 //     count: "1000+",
