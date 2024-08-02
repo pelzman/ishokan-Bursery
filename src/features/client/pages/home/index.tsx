@@ -3,10 +3,12 @@ import Carousel from "./component/Carousel"
 import OurAchievement from "./component/OurAchievement"
 import Testimonial from "./component/Testimonial"
 import WhoWeAre from "./component/WhoWeAre"
+import Navbar from "../../../../layouts/clientLayout/component/navbar"
 
 const Home = () => {
     return (
-        <div className="w-[100%] relative overflow-hidden lg:pt-[30px]">
+        <div className="w-[100%] relative overflow-hidden ">
+            <Navbar />
             <section>
                 <Carousel />
             </section>

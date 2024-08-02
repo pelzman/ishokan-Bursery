@@ -15,7 +15,7 @@ const SideBar = ({ handleClose }: { handleClose: () => void }) => {
                 <Link onClick={handleClose} to='/profile/client'>Home</Link>
                 <Link onClick={handleClose} to='/profile/client/bursary'>Bursary</Link>
                 <Link onClick={handleClose} to='/profile/client/about'>About Us</Link>
-                <Link onClick={handleClose} to='/profile/client/contact'>Contact Us</Link>
+
             </ul>
         </div>
     );

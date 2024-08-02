@@ -56,7 +56,7 @@ export const BoardData = [
 
   { name: 'Adefoluke Adeyemo', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Adefoluke Adeyemo.jpg' },
   { name: 'Adesola Afun-Ogidan', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Adesola Afun-Ogidan.jpg' },
-  { name: 'Adesola Hannah Ajakaiye', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Hannah Ajakaiye.jpg' },
+  { name: 'Hannah Ajakaiye', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Hannah Ajakaiye.jpg' },
   { name: 'Idris Balogun', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Idris Balogun.jpg' },
   { name: 'Olawale Alo', position: 'PTrustee', imageUrl: '../../../../../public/assets/images/Olawale Alo.jpg' },
   { name: 'Olayiwola Ajilore', position: 'Trustee', imageUrl: '../../../../../public/assets/images/Olayiwola Ajilore.jpg' },

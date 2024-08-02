@@ -3,11 +3,9 @@ import Input from "../../../../../globals/input"
 import TextError from "../../../../../globals/TextError"
 
 import { userRegisterSchema } from "../../../../../validations"
-import TimePicker from "react-time-picker"
-import { useState } from "react"
 
 const BursaryForm = () => {
-    const [value, onChange] = useState('10:00');
+   
     return (
         <div className="overflow-x-hidden-hidden ">
 
@@ -118,9 +116,7 @@ const BursaryForm = () => {
                                     </select>
                                     <ErrorMessage name="gender" component={TextError} />
                                 </div>
-                                <div className="w-[400px] bg-red-500"  >
-                                    <TimePicker onChange={onChange} value={value} />
-                                </div>
+                           
 
                                 <div>
                                     <Input

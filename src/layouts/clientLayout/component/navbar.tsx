@@ -24,7 +24,6 @@ const Navbar = () => {
                     <Link to='/profile/client/'>Home</Link>
                     <Link to='/profile/client/bursary'>Bursary</Link>
                     <Link to='/profile/client/about'>About Us</Link>
-                    <Link to='/profile/client/contact'>Contact Us</Link>
                 </ul>
 
                 <div onClick={handleToggle} className=" lg:hidden flex justify-center flex-col gap-y-[5px] py-[10px] items-center align-middle bg-[#989898] rounded-sm cursor-pointer relative w-[30px] h-[30px] ">
