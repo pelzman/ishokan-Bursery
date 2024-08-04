@@ -4,7 +4,7 @@ import Card from '../../../../../globals/Card'
 
 const OurCoreValue = () => {
     return (
-        <div className='pt-[40px]'>
+        <div className='pt-[40px] lg:mb-[40px]'>
             <h2 className="text-center text-2xl font-bold mb-2">Idile Majemu Foundation</h2>
             <div className=" w-[100%] h-auto mx-auto  mb-[10px]  pt-[10px] md:flex md:justify-around md:items-center md:gap-x-[30px] gap-y-[20px]">
 
