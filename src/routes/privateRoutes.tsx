@@ -12,6 +12,7 @@ const PrivateRoutes = () => {
             <Route path='client' element={<ClientLayout />}>
                 <Route index={true} element={<Home />} />
                 <Route path='bursary' element={<Bursary />} />
+                <Route path='about/:id' element={<AboutUs />} />
                 <Route path='about' element={<AboutUs />} />
                 <Route path='contact' element={<Contact />} />
             </Route>
