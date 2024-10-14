@@ -1,6 +1,7 @@
 import { ErrorMessage, Formik, Form } from "formik"
 import Input from "../../../../../globals/input"
 import TextError from "../../../../../globals/TextError"
+import { FaCheck, FaFloppyDisk } from "react-icons/fa6";
 
 import { userRegisterSchema } from "../../../../../validations"
 
@@ -137,8 +138,8 @@ const BursaryForm = () => {
                             </div>
 
                             <div className="flex justify-center items-center gap-[20px] py-[20px]">
-                                <button className="px-[40px] py-[7px] bg-blue-500 text-[13px] rounded-[5px] text-[#fff] ">Save</button>
-                                <button className="px-[40px] py-[7px] bg-blue-500 text-[13px] rounded-[5px] text-[#fff]">Submit</button>
+                                <button className="flex items-center justify-center gap-2 px-[100px] py-[10px] bg-green-500 text-[15px] rounded-[5px] text-[#fff] ">Save <FaFloppyDisk /></button>
+                                <button className="flex items-center justify-center gap-2 px-[100px] py-[10px] bg-blue-500 text-[15px] rounded-[5px] text-[#fff]">Submit <FaCheck /></button>
                             </div>
                         </Form>
 

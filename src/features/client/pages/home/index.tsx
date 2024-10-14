@@ -3,6 +3,7 @@ import Carousel from "./component/Carousel"
 import OurAchievement from "./component/OurAchievement"
 import Testimonial from "./component/Testimonial"
 import WhoWeAre from "./component/WhoWeAre"
+import UpcomingEvent from "./component/UpcomingEvent"
 import Navbar from "../../../../layouts/clientLayout/component/navbar"
 
 const Home = () => {
@@ -12,7 +13,9 @@ const Home = () => {
             <section>
                 <Carousel />
             </section>
-
+            <section>
+                <UpcomingEvent/>
+            </section>
             <section>
                 <WhoWeAre />
             </section>
