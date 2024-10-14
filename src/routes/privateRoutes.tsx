@@ -1,24 +1,20 @@
-
-import { Routes, Route } from 'react-router-dom'
-import ClientLayout from '../layouts/clientLayout'
-import AboutUs from '../features/client/pages/aboutUs'
-import Home from '../features/client/pages/home'
-import Bursary from '../features/client/pages/bursery'
-import Contact from '../features/client/pages/contact'
+import { Route, Routes } from 'react-router-dom'
+import Login from '../features/auth/pages/login'
+import Register from '../features/auth/pages/register'
+import ForgotPassword from '../features/auth/pages/forgetPassword'
+import ResetPassword from '../features/auth/pages/resetPsssword'
 
 const PrivateRoutes = () => {
-    return (
-        < Routes>
-            <Route path='client' element={<ClientLayout />}>
-                <Route index={true} element={<Home />} />
-                <Route path='bursary' element={<Bursary />} />
-                <Route path='about/:id' element={<AboutUs />} />
-                <Route path='about' element={<AboutUs />} />
-                <Route path='contact' element={<Contact />} />
-            </Route>
+  return (
+    <Routes>
 
-        </Routes>
-    )
+      <Route path='/register' element={<Register />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/forgot-password' element={<ForgotPassword />} />
+      <Route path='/reset-password' element={<ResetPassword />} />
+
+    </Routes>
+  )
 }
 
 export default PrivateRoutes

@@ -1,17 +1,11 @@
+import { ErrorMessage, Form, Formik } from 'formik'
 
-import { Link, useNavigate } from 'react-router-dom'
-import Input from '../../../globals/input/index'
-import image from '../../../../public/assets/images/worship.jpg'
-import { Formik, Form, ErrorMessage } from 'formik'
-import { IRegister } from '../../../types'
-import { userRegisterSchema } from '../../../validations'
-import { useState } from 'react'
-import TextError from '../../../globals/TextError'
-import { FaRegEye } from "react-icons/fa";
-import { FaRegEyeSlash } from "react-icons/fa";
-import { useUsers } from '../../../hooks/useUser'
-const Register = () => {
-    const initialValues: IRegister = {
+import Input from '../../../../../globals/input'
+import TextError from '../../../../../globals/TextError'
+
+const PhotoForm = () => {
+
+    const initialValues = {
         firstname: '',
         lastname: '',
         phone_number: '',
@@ -20,42 +14,22 @@ const Register = () => {
         password: '',
         dob: ''
     }
-
-
-    const navigate = useNavigate()
-    const [showPassword, setShowPassword] = useState(false)
-
-    const { addUser, error } = useUsers()
-
-    const handleSubmit = async (values: any) => {
-        try {
-            await addUser(values)
-            // navigate('/auth/login')
-             
-        
-
-         return error 
-
-        } catch (error: any) {
-            return error.message
-        }
-
-    }
-
     return (
-        <div className=' lg:w-[100%] lg:h-screen pt-[50px] lg:pt-0   lg:flex lg:justify-start gap-x-[100px] '>
+
+
+        <div className=' w-[100%] lg:h-[500px] lg:w-[60%]  lg:pt-0  lg:mx-[400px] my-auto mx:auto  gap-x-[100px] bg-[#fff] rounded-lg'>
 
             <div className='hidden lg:flex  lg:w-[55%] blur-[2px]'>
-                <img src={image} alt="" />
+                {/* <img src={image} alt="" /> */}
             </div>
-            <div className=' mt-[-20px] px-[20px] lg:pt-[20px] lg-w-1/3'>
+            <div className=' mt-[-20px] px-[20px] lg:pt-[20px] '>
                 <Formik
                     initialValues={initialValues}
-                    onSubmit={handleSubmit}
-                    validationSchema={userRegisterSchema}
+                    onSubmit={() => { }}
+                    validationSchema={{}}
                 >
                     {(formikProps) => (
-                        <Form className=" space-y-[10px]  lg:space-y-[10px] lg:px-[20px] lg:w-[500px]  w-{100%]   ">
+                        <Form className=" gap-y-[10px] lg:gap-[10px] lg:grid lg:grid-cols-2 lg:items-center lg:px-[20px]   w-{100%] pt-[20px]">
 
                             <div>
                                 <Input
@@ -102,22 +76,7 @@ const Register = () => {
                                 <ErrorMessage name="email" component={TextError} />
                             </div>
 
-                            <div className=' w-[100%]  relative'>
-                                <Input
-                                    label='Password'
 
-                                    type={showPassword ? 'text' : 'password'}
-                                    isRequired
-                                    name='password'
-                                    value={formikProps.values.password}
-                                    onChange={formikProps.handleChange}
-                                    onBlur={formikProps.handleBlur}
-                                    className='lg:w-[100%]'
-
-                                />
-                                <p onClick={() => setShowPassword(!showPassword)} className='absolute right-[20px] top-[50px] cursor-pointer'>{!showPassword ? <FaRegEye /> : <FaRegEyeSlash />}</p>
-                                <ErrorMessage name="password" component={TextError} />
-                            </div>
 
                             <div>
                                 <Input
@@ -172,19 +131,21 @@ const Register = () => {
 
 
 
-                            <button onClick={handleSubmit} className='bg-blue-500 text-white py-2.5 px-4 rounded-lg mt-[20px] w-[100%]'>Register</button>
 
+                            <button className='bg-blue-500 text-white py-2.5 px-4 rounded-lg mt-[20px] w-[100%]'>Register</button>
 
                         </Form>
+
                     )}
                 </Formik>
-                <span className=' mt-7 flex justify-center items-center gap-[5px]'>Already have an account: <Link to={'/auth/login'} className='text-[14px] text-blue-500'>Login here</Link></span>
+
             </div>
 
 
 
         </div>
+
     )
 }
 
-export default Register
+export default PhotoForm

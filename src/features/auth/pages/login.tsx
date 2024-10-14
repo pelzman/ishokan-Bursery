@@ -1,6 +1,3 @@
-
-
-
 import { Link, useNavigate } from 'react-router-dom'
 import Input from '../../../globals/input/index'
 import image from '../../../../public/assets/images/worship.jpg'
@@ -19,11 +16,11 @@ const Login = () => {
     }
     const [showPassword, setShowPassword] = useState(false)
     const { loginUser } = useUsers()
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const handleSubmit = async (values: any) => {
         await loginUser(values)
-        navigate('/profile/client')
+        // navigate('/bursary')
     }
     return (
         <div className=' lg:w-[100%] lg:h-screen pt-[50px] lg:pt-0  lg:flex lg:justify-start gap-x-[100px] '>

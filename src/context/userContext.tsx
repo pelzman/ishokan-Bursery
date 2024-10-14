@@ -2,7 +2,9 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 import  {getUsers} from '../serivices/userService'
 import { ILogin, IRegister} from "../types";
-import { register, login, logout } from "../serivices/authService";
+import AuthService from "../serivices/authService";
+
+const {register, login, logout} = new AuthService()it
 
 interface UserContextType {
   users: IRegister[];
@@ -35,8 +37,13 @@ fetchUser()
 
    const addUser = async(user:IRegister)=>{
     try {
-       const newUser = await register(user) 
-       setUser((prev)=>[...prev, newUser])
+       const response= await register(user) 
+       if(response.data.status === 200){
+        setUser((prev)=>[...prev, response])
+        
+       }
+  
+       
     } catch (error) {
         
     }
