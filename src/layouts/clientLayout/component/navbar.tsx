@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SideBar from './sideBar'
+import ishokanLogo from '../../../../public/assets/images/Ishokan logo.jpeg'
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
@@ -17,13 +18,14 @@ const Navbar = () => {
 
     return (
         <div className=' fixed z-50 px-[20px] w-[100%] flex items-center  justify-between lg:justify-start lg:items-center h-[60px] bg-white text-blue-500 shadow-lg' >
-            <div>Logo</div>
+            <div><img src={ishokanLogo} alt="" width={75} height={75} /></div>
             <div className='w-[100%] flex justify-end lg:justify-end items-center'>
                 <ul className=' hidden lg:flex lg:justify-end lg:items-center lg:gap-x-[30px] cursor-pointer'>
 
-                    <Link to='/profile/client/'>Home</Link>
-                    <Link to='/profile/client/bursary'>Bursary</Link>
-                    <Link to='/profile/client/about'>About Us</Link>
+                    <Link to='/'>Home</Link>
+                    <Link to='/auth/login'>Bursary</Link>
+                    <Link to='/about'>About Us</Link>
+
                 </ul>
 
                 <div onClick={handleToggle} className=" lg:hidden flex justify-center flex-col gap-y-[5px] py-[10px] items-center align-middle bg-[#989898] rounded-sm cursor-pointer relative w-[30px] h-[30px] ">

@@ -26,6 +26,14 @@ export interface ILoginResponse {
 export interface IRegisterResponse {
   accessToken: string;
   //refreshToken
+  data: {    
+    message:string,
+    status:number,
+    user:{
+        token:string,
+        
+    }
+}
 }
 
 export interface IUser {
