@@ -38,8 +38,8 @@ const BoardOfTrustees = () => {
                                     <p className="text-lg font-medium mr-4">{item.name} </p>
                                     <a href={item.linkedInUrl}><FaLinkedin className="w-6 h-6 hover:text-blue-500 transition-colors duration-300" /></a>
                                 </div>
-                                <p className="text-sm mt-2">{item.profile}</p>
-                                <div className="w-full text-right mt-2">
+                                <p className="text-sm mt-2 text-center line-clamp-2">{item.description}</p>
+                                <div className="w-full text-right mt-auto">
                                     <p onClick={() => handleSeemore(item)} className="hover:text-blue-400 text-sm">
                                         See More...
                                     </p>
