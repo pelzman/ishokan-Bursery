@@ -6,23 +6,30 @@ import { useNavigate } from "react-router-dom";
 class AuthService { 
 
   async register  (credentials: IRegister){
+    
     const response = await apiRequest.post("/auth/signup", credentials);
-    localStorage.setItem("accesssToken", response.data.accessToken);
-    return  response.data;
+    
+      console.log("Register response:", response.data);
+      localStorage.setItem("accesssToken", response.data.token);
+    
+
+   
+      return  { status:response.status, data:response.data}
   };
   
    async login (credentials: ILogin)   {
     const response = await apiRequest.post("/auth/login", credentials);
-    const accesssToken = response.data.accessToken;
+    console.log(response?.data?.data.user, 'datau')
+    const accesssToken = response.data.data.token
     const refreshToken = response.data.refreshToken;
     storeTokens(accesssToken, refreshToken);
-    return  response.data;
+    return  { status:response.status, data:response.data}
   };
   
   async logout (){
     const navigate = useNavigate();
     localStorage.removeItem("accessToken");
-    navigate("/login");
+    navigate("/auth/login");
     //navigate to login
   };
   

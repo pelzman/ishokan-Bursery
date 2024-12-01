@@ -25,21 +25,23 @@ const Register = () => {
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false)
 
-    const { addUser, error } = useUsers()
+    const { loading, addUser, error } = useUsers()
 
     const handleSubmit = async (values: any) => {
+       
         try {
-            await addUser(values)
-            // navigate('/auth/login')
-             
-        
-
-         return error 
+            const response =   await addUser(values)   
+          if (response?.status === 201){
+            navigate('/auth/login')
+          }
+       else{
+        return error
+       }
+            
 
         } catch (error: any) {
             return error.message
         }
-
     }
 
     return (
@@ -146,8 +148,8 @@ const Register = () => {
                                     onBlur={formikProps.handleBlur}
                                 >
                                     <option value="">select....</option>
-                                    <option value="1">male</option>
-                                    <option value="2">female</option>
+                                    <option value="male">male</option>
+                                    <option value="female">female</option>
                                 </select>
                                 <ErrorMessage name="gender" component={TextError} />
                             </div>
@@ -167,18 +169,12 @@ const Register = () => {
                                 />
                                 <ErrorMessage name="dob" component={TextError} />
                             </div>
-
-
-
-
-
-                            <button onClick={handleSubmit} className='bg-blue-500 text-white py-2.5 px-4 rounded-lg mt-[20px] w-[100%]'>Register</button>
-
-
+                            <button type='submit' className='bg-blue-500 text-white py-2.5 px-4 rounded-lg mt-[20px] w-[100%]'>{loading ? 'loading...' : 'Register'}</button>
                         </Form>
                     )}
                 </Formik>
-                <span className=' mt-7 flex justify-center items-center gap-[5px]'>Already have an account: <Link to={'/auth/login'} className='text-[14px] text-blue-500'>Login here</Link></span>
+                <span className=' mt-4 flex justify-center items-center gap-[5px]'>Already have an account: <Link to={'/auth/login'} className='text-[14px] text-blue-500'>Login here</Link></span>
+                <span className=' mt-2 flex justify-center items-center gap-x-[5px]'>Go back <Link to={'/'} className='text-[14px] text-blue-500'>Home</Link></span>
             </div>
 
 

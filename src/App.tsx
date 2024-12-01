@@ -1,13 +1,15 @@
 import MainRoutes from "./routes"
-import { UserProvider } from "./context/userContext"
-
+import { UserProvider } from "./context/authContext"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   return (
     <UserProvider>
-        <div>
-      <MainRoutes />
-    </div>
+      <ToastContainer />
+      <div>
+        <MainRoutes />
+      </div>
     </UserProvider>
   )
 }
