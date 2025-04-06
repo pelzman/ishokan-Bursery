@@ -10,7 +10,8 @@ import AboutUs from '../features/client/pages/aboutUs'
 import Home from '../features/client/pages/home'
 import Bursary from '../features/client/pages/bursery'
 import Contact from '../features/client/pages/contact'
-
+import Project from "../features/client/pages/projects";
+import ToDonate from "../features/client/pages/donate";
 import Dashboard from "../features/admin/pages/dashboard";
 import Layout from "../layouts/adminLayout";
 const MainRoutes = () => {
@@ -25,6 +26,8 @@ const MainRoutes = () => {
                 <Route path='about/:id' element={<AboutUs />} />
                 <Route path='about' element={<AboutUs />} />
                 <Route path='contact' element={<Contact />} />
+                <Route path='project' element={<Project />} />
+                <Route path='donate' element={<ToDonate />} />
             </Route>
             <Route path="*" element={<NotFound />} />
             <Route path="/admin" element={<Layout />}>

@@ -13,9 +13,11 @@ const SideBar = ({ handleClose }: { handleClose: () => void }) => {
             </button>
             <ul className='flex flex-col gap-y-6 text-center'>
                 <Link onClick={handleClose} to='/'>Home</Link>
-                <Link onClick={handleClose} to='/auth/login'>Bursary</Link>
+                <Link onClick={handleClose} to='/project'>Projects</Link>
+                <Link onClick={handleClose} to='/auth/login'>To apply</Link>
+                <Link onClick={handleClose} to='/donate'>To donate</Link>
                 <Link onClick={handleClose} to='/about'>About Us</Link>
-
+                <Link onClick={handleClose} to='/contact'>Contact Us</Link>
             </ul>
         </div>
     );

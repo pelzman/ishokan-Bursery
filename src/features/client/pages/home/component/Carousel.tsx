@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 const images = [
   'https://via.placeholder.com/600x300/0000/FFFFFF?text=Image+1',
   'https://via.placeholder.com/600x300/0000/FFFFFF?text=Image+2',
-  'https://via.placeholder.com/600x300/0000/FFFFFF?text=Image+3'
+  'https://via.placeholder.com/600x300/0000/FFFFFF?text=Image+3',
+  '/assets/images/Ishokan logo.jpeg',
 ];
 
 const Carousel = () => {
