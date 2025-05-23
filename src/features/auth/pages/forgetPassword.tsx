@@ -8,7 +8,7 @@ import { Formik, Form, ErrorMessage } from 'formik'
 import { userLoginSchema } from '../../../validations'
 import { ILogin } from '../../../types'
 import TextError from '../../../globals/TextError'
-import { useState } from 'react'
+// import { useState } from 'react'
 
 const ForgotPassword = () => {
     const initialValues: ILogin = {
@@ -16,7 +16,7 @@ const ForgotPassword = () => {
         password: ''
     }
 
-    const [showPassword, setShowPassword] = useState(false)
+    // const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
 
     const handleSubmit = () => {

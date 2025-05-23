@@ -7,6 +7,7 @@ export interface IRegister {
   password: string;
   dob: string
   role?: string;
+  message? :string
 }
 export interface ILogin {
   email: string;
@@ -19,29 +20,34 @@ export interface IReset {
   confirm_password: string;
 }
 export interface ILoginResponse {
-  refreshToken: any;
-  accessToken: string;
+  status:number,
+  data:{
+    user: IUserResponse,
+    refreshToken: string
+    accessToken: string;
+  }
+
   //refreshToken
 }
 export interface IRegisterResponse {
-  accessToken: string;
-  //refreshToken
-  data: {    
-    message:string,
-    status:number,
-    user:{
-        token:string,
-        
-    }
-}
-}
+  status:number,
 
+  //refreshToken
+  data: IUserResponse
+}
+ 
 export interface IUser {
-  id: number;
+
+  id: number | string
   firstname: string;
   lastname: string;
   email: string;
   phone_number: string;
   gender: string;
-  password: string;
+  password: string;  
+  dob: string
+  role?: string;
 }
+
+
+export type IUserResponse = Omit<IRegister, "password" | "role">

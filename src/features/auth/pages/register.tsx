@@ -7,8 +7,9 @@ import { userRegisterSchema } from '../../../validations';
 import { useState } from 'react';
 import TextError from '../../../globals/TextError';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import { useUsers } from '../../../hooks/useUser';
-
+// import { useUsers } from '../../../hooks/useUser';
+import { useRegister } from '../../../queries/users/useUser';
+import { toast } from 'react-toastify';
 const Register = () => {
     const initialValues: IRegister = {
         firstname: '',
@@ -18,23 +19,32 @@ const Register = () => {
         email: '',
         password: '',
         dob: '',
-    };
 
+    };
+    const {
+        mutateAsync: regMutation,
+        status,
+        isError,
+        error,
+        isSuccess,
+        data,
+
+    } = useRegister()
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
-    const { loading, addUser, error } = useUsers();
+    // const { loading, addUser, error } = useUsers();
 
-    const handleSubmit = async (values: any) => {
+    const handleSubmit = async (values: IRegister) => {
         try {
-            const response = await addUser(values);
-            if (response?.status === 201) {
+            const response = await regMutation(values);
+            if (response?.status === 200) {
                 navigate('/auth/login');
             } else {
-                return error;
+                throw new Error('Registration failed');
             }
-        } catch (error: any) {
-            return error.message;
+        } catch (error) {
+            throw new Error('Registration failed');
         }
     };
 
@@ -179,9 +189,11 @@ const Register = () => {
                             <button
                                 type="submit"
                                 className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 rounded-lg mt-4 w-full hover:from-blue-600 hover:to-blue-700 transition duration-300 shadow-lg"
+                                disabled={isSuccess || status === 'pending'}
                             >
-                                {loading ? 'Loading...' : 'Register'}
+                                {status === 'pending' ? "Registering.... " : "Register"}
                             </button>
+
                         </Form>
                     )}
                 </Formik>
@@ -202,6 +214,8 @@ const Register = () => {
                     </Link>
                 </div>
             </div>
+            {isSuccess && toast.success(data?.data.message)}
+            {isError && toast.error(error?.message)}
         </div>
     );
 };

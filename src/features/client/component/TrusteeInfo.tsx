@@ -1,5 +1,6 @@
 
-const TrusteeInfo = ({ trustee, handleCloseModal }: { trustee: any, handleCloseModal: () => void }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TrusteeInfo = ({ trustee, handleCloseModal }: { trustee:any, handleCloseModal: () => void }) => {
 
     return (
         <div onClick={handleCloseModal} className="w-[100%] lg:rounded-lg    lg:w-[60%] h-[80%] px-[50px] mx-auto my-auto  bg-white  py-[40px]">

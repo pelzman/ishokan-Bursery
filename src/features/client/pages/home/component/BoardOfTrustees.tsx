@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // import Card from "../../../../globals/Card"
 import { BoardData } from "../data"
 import Slider from 'react-slick';
@@ -6,11 +7,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import { settings } from "../../../../../utils";
 import { FaLinkedin } from "react-icons/fa6";
 import { Modal } from "@mui/material";
-import { Link, useNavigate } from 'react-router-dom'
+// import { Link, useNavigate } from 'react-router-dom'
 import { useState } from "react";
 import TrusteeInfo from "../../../component/TrusteeInfo";
 const BoardOfTrustees = () => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [openModal, setOpenModal] = useState(false)
 
     const [trustee, setTrustee] = useState<any>({})

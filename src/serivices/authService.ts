@@ -1,21 +1,18 @@
 import { ILogin, IRegister } from "../types";
 import { apiRequest } from "../api/index";
 import { storeTokens } from "../api/index";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 class AuthService { 
+  static instance = new AuthService()
 
-  async register  (credentials: IRegister){
-    
-    const response = await apiRequest.post("/auth/signup", credentials);
-    
+  constructor (){}
+  async register  (credentials: IRegister){    
+    const response = await apiRequest.post("/auth/signup", credentials);    
       console.log("Register response:", response.data);
-      localStorage.setItem("accesssToken", response.data.token);
-    
-
-   
+      localStorage.setItem("accesssToken", response.data.token);   
       return  { status:response.status, data:response.data}
-  };
+  }
   
    async login (credentials: ILogin)   {
     const response = await apiRequest.post("/auth/login", credentials);
@@ -24,14 +21,15 @@ class AuthService {
     const refreshToken = response.data.refreshToken;
     storeTokens(accesssToken, refreshToken);
     return  { status:response.status, data:response.data}
-  };
+  }
   
   async logout (){
-    const navigate = useNavigate();
-    localStorage.removeItem("accessToken");
-    navigate("/auth/login");
+    
+    localStorage.clear()
+    window.location.href = '/login'
+    // navigate("/auth/login");
     //navigate to login
-  };
+  }
   
 
 }

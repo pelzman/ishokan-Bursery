@@ -7,23 +7,27 @@ import { ILogin } from '../../../types';
 import TextError from '../../../globals/TextError';
 import { useState } from 'react';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import { useUsers } from '../../../hooks/useUser';
+// import { useUsers } from '../../../hooks/useUser';
+import { useLogin } from '../../../queries/users/useUser';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+
+    const { mutateAsync: loginMutation, status, isSuccess, isError } = useLogin()
     const initialValues: ILogin = {
         email: '',
         password: '',
     };
     const [showPassword, setShowPassword] = useState(false);
-    const { users, loading, error, loginUser } = useUsers();
+
     const navigate = useNavigate();
 
-    const handleSubmit = async (values: any) => {
-        const response = await loginUser(values);
+    const handleSubmit = async (values: ILogin) => {
+      const response =   await loginMutation(values)
         if (response?.status === 200) {
             navigate('/bursary');
         } else {
-            return error;
+            throw new Error('Login failed');
         }
     };
 
@@ -88,8 +92,9 @@ const Login = () => {
                             <button
                                 type="submit"
                                 className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 rounded-lg mt-4 w-full hover:from-blue-600 hover:to-blue-700 transition duration-300 shadow-lg"
+                                disabled={status === 'pending'}
                             >
-                                {loading ? 'Loading...' : 'Login'}
+                                {status === 'pending' ? 'Requesting...' : 'Login'}
                             </button>
                         </Form>
                     )}
@@ -116,6 +121,9 @@ const Login = () => {
                     </Link>
                 </div>
             </div>
+            {isSuccess && toast.success('Login successful!')}
+            {isError && toast.error('Login failed!')}
+
         </div>
     );
 };
